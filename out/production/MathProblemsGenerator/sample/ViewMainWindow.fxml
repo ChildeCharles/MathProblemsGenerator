@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainWindow">
+    <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+    <VBox minHeight="500.0" minWidth="500.0" prefHeight="768" prefWidth="1366" style="-fx-background-color: white" alignment="CENTER" spacing="20">
+        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+         <children>
+             <ImageView preserveRatio="true">
+                 <image>
+                     <Image url="@../Pictures/title.png" />
+                 </image>
+             </ImageView>
+             <ComboBox fx:id="problemType" onAction="#setProblemType" prefWidth="275.0" promptText="Wybierz typ zadania" >
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Równania liniowe" />
+                         <String fx:value="Równania kwadratowe" />
+                         <String fx:value="Probabilistyka" />
+                         <String fx:value="Ciągi liczbowe" />
+                         <String fx:value="Procenty" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
+             <Button layoutX="275.0" mnemonicParsing="false" onAction="#goToSolvingWindow"  style="-fx-font-size: 30px" text="Generuj zadanie" />
+             <Button layoutX="275.0"  mnemonicParsing="false" onAction="#exit" style="-fx-font-size: 30px" text="Wyjście" />
+
+
+         </children>
+    </VBox>
+   </children>
+</GridPane>
